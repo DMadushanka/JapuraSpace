@@ -1,0 +1,237 @@
+/* StudentAttendance.css */
+.student-attendance-page {
+    background: #000;
+    min-height: 100vh;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header-premium {
+    background: linear-gradient(135deg, #7b1113 0%, #4a0a0b 100%);
+    padding: 60px 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-bottom: 2px solid #FFD700;
+}
+
+.back-button {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.back-button:hover {
+    background: white;
+    color: #7b1113;
+}
+
+.header-content h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.header-content p {
+    margin: 5px 0 0;
+    opacity: 0.7;
+    font-size: 13px;
+    color: #FFD700;
+    letter-spacing: 1px;
+}
+
+.scanner-container {
+    flex: 1;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.scanner-box {
+    background: #111;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255,215,0,0.2);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+#reader {
+    width: 100% !important;
+    border: none !important;
+}
+
+#reader__status_span {
+    display: none;
+}
+
+/* Custom UI for html5-qrcode components */
+#reader button {
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 15px;
+}
+
+#reader__dashboard_section_csr button {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#reader select {
+    background: #222;
+    color: white;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.scan-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    gap: 20px;
+}
+
+.scan-overlay p {
+    font-weight: 700;
+    color: #FFD700;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #333;
+    border-top: 4px solid #FFD700;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+.error-card {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1.5px solid rgba(239, 68, 68, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.error-card svg {
+    color: #ef4444;
+    font-size: 30px;
+}
+
+.error-card p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.error-card button {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.attendance-tips {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tip {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.tip svg {
+    color: #FFD700;
+    opacity: 0.6;
+}
+
+.attendance-result {
+    min-height: 100vh;
+    background: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.attendance-result.success .icon {
+    font-size: 80px;
+    color: #4ade80;
+    margin-bottom: 25px;
+    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.finish-btn {
+    margin-top: 40px;
+    background: #4ade80;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.finish-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(74, 222, 128, 0.3);
+}
